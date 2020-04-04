@@ -1,0 +1,67 @@
+body {
+  background: #282e38 !important;
+}
+
+.sidebar-wrapper {
+  background-color: #21262e !important;
+}
+
+.background {
+  background-color: #282e38 !important; 
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #2d3e63;
+   color: white;
+   text-align: center;
+}
+
+.row.header .meta .page {
+  font-size: 27px; 
+  color: white;
+}
+
+.row.header>div:last-child {
+  background-color: #21262e;
+  min-height: 67px;
+}
+
+.map-container-5 {
+	overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+}
+
+.map-container-5 iframe{
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+}
+
+.widget {
+    background-color: #282e38 !important;
+    color: white;
+    border-color: #a29b9b99;
+}
+
+.widget .widget-header {
+    color: #d5d2d2;
+    background-color: #282e38 !important;
+}
+
+.widget .widget-body table thead {
+    background: #282e38 !important;
+}
+
+.widget .widget-body .canvas {
+    width: 400px !important; 
+    height: 652px !important;
+}
+

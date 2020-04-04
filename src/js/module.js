@@ -1,0 +1,1 @@
+angular.module('CovidN', ['ui.bootstrap', 'ui.router', 'ngCookies']);

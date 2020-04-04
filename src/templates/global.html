@@ -1,0 +1,100 @@
+<div class="row header" style="margin-bottom: 5px;">
+  <div class="col-xs-12">
+    <div class="meta">
+      <div class="page">
+        Coronavirus COVID-19 Global Cases
+      </div>
+    </div>
+  </div>
+</div>
+
+ <div class="row" data-ng-controller="DataCtrl">
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <rd-widget>
+      <rd-widget-body>
+        <div class="widget-icon pull-left" style="background-color: #ff6a00">
+          <i class="fa fa-users"></i>
+        </div>
+        <div class="title">{{coronaDataObj.globalTotalCases}}</div>
+        <div class="comment">Total Confirmed</div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <rd-widget>
+      <rd-widget-body>
+        <div class="widget-icon orange pull-left">
+          <i class="fa fa-users"></i>
+        </div>
+        <div class="title">{{coronaDataObj.globalNewCases}}</div>
+        <div class="comment">New Cases</div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <rd-widget>
+      <rd-widget-body style="background-color: #017601">
+        <div class="widget-icon green pull-left">
+          <i class="fa fa-users"></i>
+        </div>
+        <div class="title">{{coronaDataObj.globalRecovered}}</div>
+        <div class="comment">Total Recovered</div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+  <div class="col-lg-3 col-md-6 col-xs-12">
+    <rd-widget>
+      <rd-widget-body style="background-color: #d70000;">
+        <div class="widget-icon red pull-left">
+          <i class="fa fa-users"></i>
+        </div>
+        <div class="title">{{coronaDataObj.globalDeaths}}</div>
+        <div class="comment">Total Deaths</div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-6">
+      <rd-widget>
+        <rd-widget-body classes="no-padding">
+          <div class="category-grid" style="margin-left: 185px; margin-top: 15px;">TOTAL CASES IN SELECTED COUNTRY</div> <br>
+            <div ng-controller="GraphCtrlForSelectedCountry">
+              <div style="margin-left: 60px; font-size: 18px;">Please Select Country :- &nbsp
+              <select id="ddlViewBy" ng-model="selectedValue" style="color: #2b2626;">
+                <option ng-repeat="countryName in countryNames" value="{{countryName}}" >{{countryName}}</option>
+              </select>
+               </div>
+               <br>
+              <canvas id="total-cases-graph" width="400" height="652"></canvas>
+            </div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+  <div class="col-lg-6" ng-controller="GraphCtrlForSelectedCountry">
+    <rd-widget>
+      <rd-widget-header icon="fa-users" title="Coronavirus (COVID-19) cases worldwide" style="font-size: 22px;">
+        <input type="text" placeholder="Search" class="form-control input-sm" />
+      </rd-widget-header>
+      <rd-widget-body classes="no-padding">
+        <div class="table-responsive" style="height: 630px;overflow-y: auto;">
+          <table class="table">
+            <thead>
+              <tr><th class="text-center">Country Name</th><th>Total Confirmed</th><th>Total Deaths</th><th>Total Recovered</th></tr>
+            </thead>
+            <tbody>
+              <tr data-ng-repeat="countryData in countryDataTable">
+                <td>{{countryData.countryName}}</td>
+                <td>{{countryData.totalConfirmed}}</td>
+                <td>{{countryData.totalDeaths}}</td>
+                <td>{{countryData.totalRecovered}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <div style="color: #bd6c19; ">Last updated :- {{countryDataTable[0].lastUpdateDate}}</div>
+      </rd-widget-body>
+    <rd-widget>
+  </div>
+</div>
