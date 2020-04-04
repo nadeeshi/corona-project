@@ -59,10 +59,10 @@
     <div class="col-lg-6">
       <rd-widget>
         <rd-widget-body classes="no-padding">
-          <div class="category-grid" style="margin-left: 185px; margin-top: 15px;">TOTAL CASES IN SELECTED COUNTRY</div> <br>
+          <div class="category-grid" style="text-align: center; margin-top: 15px;">TOTAL CASES IN SELECTED COUNTRY</div> <br>
             <div ng-controller="GraphCtrlForSelectedCountry">
-              <div style="margin-left: 60px; font-size: 18px;">Please Select Country :- &nbsp
-              <select id="ddlViewBy" ng-model="selectedValue" style="color: #2b2626;">
+              <div style="text-align: center; font-size: 17px;">Please Select Country :- &nbsp
+              <select id="ddlViewBy" ng-model="selectedValue">
                 <option ng-repeat="countryName in countryNames" value="{{countryName}}" >{{countryName}}</option>
               </select>
                </div>
@@ -75,11 +75,15 @@
   <div class="col-lg-6" ng-controller="GraphCtrlForSelectedCountry">
     <rd-widget>
       <rd-widget-header icon="fa-users" title="Coronavirus (COVID-19) cases worldwide" style="font-size: 22px;">
-        <input type="text" placeholder="Search" class="form-control input-sm" />
+        <input type="text" placeholder="Search" id="contryInput" ng-keyup="filterFunctionForContry()" class="form-control input-sm" />
       </rd-widget-header>
       <rd-widget-body classes="no-padding">
+      <!--   <div>
+          <input type="text" placeholder="Search" id="contryInput" ng-keyup="filterFunctionForContry()" class="form-control input-sm" />
+        </div> -->
+       
         <div class="table-responsive" style="height: 630px;overflow-y: auto;">
-          <table class="table">
+          <table class="table" id="globalTable">
             <thead>
               <tr><th class="text-center">Country Name</th><th>Total Confirmed</th><th>Total Deaths</th><th>Total Recovered</th></tr>
             </thead>

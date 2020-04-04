@@ -1,5 +1,9 @@
-angular.module("CovidN").controller("DataCtrl", ["$scope", "$http", function($scope, $http) {
-   $http({
+angular
+    .module('CovidN')
+    .controller('DataCtrl', ['$scope', '$http', DataCtrl]);
+
+function DataCtrl($scope, $http) {
+    $http({
         method : "GET",
         url : 'https://hpb.health.gov.lk/api/get-current-statistical'
     }).then(function mySuccess(response) {
@@ -18,6 +22,26 @@ angular.module("CovidN").controller("DataCtrl", ["$scope", "$http", function($sc
         };
     }, function myError(response) {
         $scope.myWelcome = response.statusText;
-  });
+    });
 
-}]);
+    $scope.filterFunctionForHospitals = function() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("hospitalInput");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("hospitalTable");
+      tr = table.getElementsByTagName("tr");
+
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+
+    };
+}

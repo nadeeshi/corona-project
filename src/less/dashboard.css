@@ -30,6 +30,10 @@ body {
   min-height: 67px;
 }
 
+.row.header .meta div {
+  white-space: normal;
+}
+
 .map-container-5 {
 	overflow:hidden;
 	padding-bottom:56.25%;
@@ -56,6 +60,10 @@ body {
     background-color: #282e38 !important;
 }
 
+.widget .widget-header .row .pull-right{
+    width: 75%;
+}
+
 .widget .widget-body table thead {
     background: #282e38 !important;
 }
@@ -65,3 +73,8 @@ body {
     height: 652px !important;
 }
 
+select {
+  color: #2b2626;
+  border-radius: 9px 9px 9px 9px;
+  box-shadow: 1px 1px 11px #330033;
+}
