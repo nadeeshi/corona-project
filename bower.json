@@ -1,14 +1,10 @@
 {
     "name": "rdash-angular",
     "version": "0.0.1",
-    "description": "An AngularJS implementation of the responsive dashboard",
-    "homepage": "https://github.com/Ehesp/Responsive-Dashboard",
+    "description": "An AngularJS implementation of the responsive dashboard For Covid-19",
+    "homepage": "https://github.com/nadeeshi/corona-project/blob/master/src/index.html",
     "authors": [
-        "Elliot Hesp <elliot.hesp@gmail.com>"
-    ],
-    "contributors": [
-        "Ricardo Pascua Jr <rdpascua@outlook.com>",
-        "Leonel Samayoa <leonel.e.samayoa@gmail.com>"
+        "Nadeeshika Senavirathna"
     ],
     "main": "index.html",
     "license": "MIT",
@@ -26,10 +22,12 @@
         "angular-bootstrap": "~1.0.3",
         "angular-ui-router": "^0.2.15",
         "bootstrap": "~3.3.6",
-        "font-awesome": "~4.5.0"
+        "font-awesome": "~4.5.0",
+		"chart.js": "~2.4.0",
+        "jquery": "~2.1.4"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/rdash/rdash-angular"
+        "url": "https://github.com/nadeeshi/corona-project"
     }
 }
